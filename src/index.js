@@ -24,7 +24,7 @@ class Board extends React.Component {
 
     render() {
         return (
-            <>
+            <div>
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
@@ -40,7 +40,7 @@ class Board extends React.Component {
                     {this.renderSquare(7)}
                     {this.renderSquare(8)}
                 </div>
-            </>
+            </div>
         );
     }
 }
@@ -77,7 +77,7 @@ class Game extends React.Component {
         this.setState({
             stepnumber : step,
             xIsNext : (step%2) === 0
-        })
+        });
     }
 
 
@@ -103,7 +103,7 @@ class Game extends React.Component {
             status = "Winner :" + (winner);
         }
         else{
-            status = "Next player is :" + (this.xIsNext ? 'X' : 'O');
+            status = "Next player is :" + (this.state.xIsNext ? 'X' : 'O');
         }
         return (
             <div className="game">
